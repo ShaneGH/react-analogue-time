@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./testBin",
+        "module": "amd"
+    },
+    "include": [
+        "./unitTests/**/*"
+    ]
+}

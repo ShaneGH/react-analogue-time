@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../dist/react-analogue-time.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <div style="padding: 20px">
+        <div id="test"></div>
+    </div>
+    <script type="text/babel">
+        (function (test) {
+            class Ren extends React.Component {
+
+                constructor(p, c) {
+                    super(p, c);
+
+                    var getOnTimeChanged = () => {
+                        return (h, m) => {
+                            this.setState({
+                                time: {
+                                    hour: h,
+                                    minute: m
+                                },
+                                onTimeChanged: getOnTimeChanged()
+                            });
+                        }
+                    }
+
+                    this.state = {
+                        ...this.props,
+                        onTimeChanged: getOnTimeChanged()
+                    };
+                }
+
+                render () {
+                    // debugger;
+                    if (this.state.time.hour === 20) return null;
+                    return <div className={`x-${this.state.time.minute}`}>
+                        <TimePicker style={{padding: "5px"}} value="12:15PM" onTimeChanged={this.state.onTimeChanged} />
+                    </div>
+                }
+            }
+
+            ReactDOM.render(
+                <div>
+                    <Ren time={{hour: 5, minute: 56}} />
+                    <br />
+                    <br />
+                </div>,
+                test
+            );
+        }(document.getElementById("test")));
+    </script>
+</body>
+
+</html>

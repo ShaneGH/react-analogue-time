@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "module": "ES6",
+        "moduleResolution": "node",
+        "target": "ES5",
+        "strictNullChecks": true,
+        "jsx": "react"
+    },
+    "include": [
+        "./src/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

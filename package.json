@@ -7,7 +7,8 @@
     "build-dev": "node \"./node_modules/webpack/bin/webpack.js\" --config \"./webpack/dev.config.js\"",
     "build-prod": "node \"./node_modules/webpack/bin/webpack.js\" --config \"./webpack/production.config.js\"",
     "build": "npm run build-dev && npm run build-prod",
-    "develop": "node \"./node_modules/webpack/bin/webpack.js\" --config \"./webpack/dev.config.js\" --watch"
+    "develop": "node \"./node_modules/webpack/bin/webpack.js\" --config \"./webpack/dev.config.js\" --watch",
+    "release": "npm run build && node \"./tools/publish.js\""
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
     "awesome-typescript-loader": "^5.0.0",
+    "fs-walker": "^1.0.0",
+    "ncp": "^2.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "typescript": "^2.8.3",

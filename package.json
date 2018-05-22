@@ -1,6 +1,6 @@
 {
   "name": "react-analogue-time",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small and simple time picker for react based on google material UI",
   "main": "index.js",
   "scripts": {
